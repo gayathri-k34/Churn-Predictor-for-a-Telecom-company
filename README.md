@@ -38,18 +38,28 @@ The target variable is **Churn** (Yes/No).
 
 ## Project Files
 
-├── app.py # Flask application
-├── CustomEncoder.py # Custom frequency encoder for categorical features
-├── Dockerfile # Docker configuration
-├── requirements.txt # Python dependencies
-├── templates/
-│ └── churn.html # Frontend HTML form for user input
-├── notebooks/
-│ ├── Churn.ipynb # Exploratory Data Analysis, Modeling
-│ ├── churn_deploy_training.ipynb # Model training pipeline
-│ └── churn_deploy_test.ipynb # Model testing and validation
-├── my_ml_pipeline # pickle file of trained model
-└── README.md # Project documentation
+- app.py -> Flask application
+
+- CustomEncoder.py -> Custom frequency encoder for categorical features
+  
+- Dockerfile -> Docker configuration
+  
+- requirements.txt -> Python dependencies
+  
+- templates/
+  
+  - churn.html -> Frontend HTML form for user input
+    
+-  notebooks/
+  
+  - Churn.ipynb -> Exploratory Data Analysis, Modeling
+    
+  - churn_deploy_training.ipynb -> Model training pipeline
+    
+  - churn_deploy_test.ipynb -> Model testing and validation
+    
+- my_ml_pipeline # pickle file of trained model
+
 
 
 ---
