@@ -1,6 +1,6 @@
 # Customer Churn Predictor
 
-This project implements a **customer churn prediction system** for a NovaConnect, a fictional company. The model identifies customers at risk of leaving the service, helping enable appropriate retention strategies.  
+This project implements a **customer churn prediction system** for NovaConnect, a fictional company. The model identifies customers at risk of leaving the service, helping enable appropriate retention strategies.  
 
 The application is deployed as a **Flask web app** inside a Docker container, making it easy to run locally or host on platforms like **Render**. Users can input customer details through a simple web form and receive churn predictions in real time.
 
