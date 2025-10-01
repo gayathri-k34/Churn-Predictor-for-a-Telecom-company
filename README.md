@@ -58,7 +58,7 @@ The target variable is **Churn** (Yes/No).
     
   - churn_deploy_test.ipynb -> Model testing and validation
     
-- my_ml_pipeline # pickle file of trained model
+- my_ml_pipeline -> pickle file of trained model
 
 
 
@@ -117,6 +117,6 @@ Render automatically builds the container from the `Dockerfile` and serves the F
 - Containerization: Docker
 
 ---
-Author
+## Author
 Gayathri K
 
