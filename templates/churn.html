@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Customer Churn Prediction</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body { background-color: white; font-family: Calibri, sans-serif; color: black; }
+    .form-container { max-width: 500px; margin: 50px auto; padding: 30px; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0px 4px 10px rgba(0,0,0,0.05); background: #fff; }
+    h2 { text-align: center; margin-bottom: 20px; }
+    .prediction { margin-top: 20px; font-size: 18px; font-weight: 500; text-align: center; padding: 10px; border-radius: 6px; }
+    .churn-yes { color: #b30000; background-color: #ffe6e6; border: 1px solid #ff9999; }
+    .churn-no { color: #006600; background-color: #e6ffe6; border: 1px solid #99ff99; }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Customer Churn Prediction</h2>
+    <form method="POST">
+      <!-- Contract -->
+      <div class="mb-3">
+        <label class="form-label">Contract</label>
+        <select name="Contract" class="form-select" required>
+          <option value="Month-to-month" {% if original_input and original_input.Contract == 'Month-to-month' %}selected{% endif %}>Month-to-month</option>
+          <option value="One year" {% if original_input and original_input.Contract == 'One year' %}selected{% endif %}>One year</option>
+          <option value="Two year" {% if original_input and original_input.Contract == 'Two year' %}selected{% endif %}>Two year</option>
+        </select>
+      </div>
+
+      <!-- Internet Service -->
+      <div class="mb-3">
+        <label class="form-label">Internet Service</label>
+        <select name="InternetService" class="form-select" required>
+          <option value="DSL" {% if original_input and original_input.InternetService == 'DSL' %}selected{% endif %}>DSL</option>
+          <option value="Fiber optic" {% if original_input and original_input.InternetService == 'Fiber optic' %}selected{% endif %}>Fiber optic</option>
+          <option value="No" {% if original_input and original_input.InternetService == 'No' %}selected{% endif %}>No</option>
+        </select>
+      </div>
+
+      <!-- Tenure -->
+      <div class="mb-3">
+        <label class="form-label">Tenure (months)</label>
+        <input type="number" name="Tenure" class="form-control" required value="{{ original_input.Tenure if original_input else '' }}">
+      </div>
+
+      <!-- Monthly Charges -->
+      <div class="mb-3">
+        <label class="form-label">Monthly Charges</label>
+        <input type="number" step="0.01" name="MonthlyCharges" class="form-control" required value="{{ original_input.MonthlyCharges if original_input else '' }}">
+      </div>
+
+      <!-- Total Charges -->
+      <div class="mb-3">
+        <label class="form-label">Total Charges</label>
+        <input type="number" step="0.01" name="TotalCharges" class="form-control" required value="{{ original_input.TotalCharges if original_input else '' }}">
+      </div>
+
+      <!-- Payment Method -->
+      <div class="mb-3">
+        <label class="form-label">Payment Method</label>
+        <select name="PaymentMethod" class="form-select" required>
+          <option value="Electronic check" {% if original_input and original_input.PaymentMethod == 'Electronic check' %}selected{% endif %}>Electronic check</option>
+          <option value="Mailed check" {% if original_input and original_input.PaymentMethod == 'Mailed check' %}selected{% endif %}>Mailed check</option>
+          <option value="Bank transfer (automatic)" {% if original_input and original_input.PaymentMethod == 'Bank transfer (automatic)' %}selected{% endif %}>Bank transfer (automatic)</option>
+          <option value="Credit card (automatic)" {% if original_input and original_input.PaymentMethod == 'Credit card (automatic)' %}selected{% endif %}>Credit card (automatic)</option>
+        </select>
+      </div>
+
+      <!-- Tech Support -->
+      <div class="mb-3">
+        <label class="form-label">Tech Support</label>
+        <select name="TechSupport" class="form-select" required>
+          <option value="Yes" {% if original_input and original_input.TechSupport == 'Yes' %}selected{% endif %}>Yes</option>
+          <option value="No" {% if original_input and original_input.TechSupport == 'No' %}selected{% endif %}>No</option>
+        </select>
+      </div>
+
+      <button type="submit" class="btn btn-dark w-100">Predict</button>
+    </form>
+
+    {% if result %}
+      {% if result == 'Yes' %}
+        <div class="prediction churn-yes">Customer is likely to churn</div>
+      {% else %}
+        <div class="prediction churn-no">Customer is likely to stay</div>
+      {% endif %}
+    {% endif %}
+  </div>
+</body>
+</html>
