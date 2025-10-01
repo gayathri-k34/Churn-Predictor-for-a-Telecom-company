@@ -81,23 +81,13 @@ The target variable is **Churn** (Yes/No).
 ---
 
 
-This project is deployed on **Render** using **Docker**.  
-Render automatically builds the container from the `Dockerfile` and serves the Flask app.  
-
-- Public link: [Churn Predictor App](https://churn-predictor-sbr0.onrender.com)
-- Backend: Flask + scikit-learn model
-- Containerization: Docker
-
----
-
-
 ## Results and Insights
 
 ### The Random Forest model provided strong performance with:
-F1-score: 80%
-Recall: 82%
-Precision: 77%
-Variance error: 2%
+- F1-score: 80%
+- Recall: 82%
+- Precision: 77%
+- Variance error: 2%
 
 ### Key churn drivers include:
 
@@ -112,10 +102,10 @@ Variance error: 2%
 
 ## Tech Stack
 
-Languages: Python
-Libraries: pandas, NumPy, scikit-learn, imbalanced-learn, matplotlib, seaborn, Flask
-Deployment: Docker, Render
-Version Control: Git, GitHub
+- Languages: Python
+- Libraries: pandas, NumPy, scikit-learn, imbalanced-learn, matplotlib, seaborn, Flask
+- Deployment: Docker, Render
+- Version Control: Git, GitHub
 
 ---
 
@@ -126,7 +116,7 @@ Render automatically builds the container from the `Dockerfile` and serves the F
 - Backend: Flask + scikit-learn model
 - Containerization: Docker
 
-
+---
 Author
 Gayathri K
 
